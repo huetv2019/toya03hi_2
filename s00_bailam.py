@@ -41,11 +41,22 @@ def hi_de(name=''):
 # print(hi_de(None))
 
 def hi(*args):
-  name_list=args
-  s=', '.join(name_list[:-1])
-  t=name_list[-1]
-  return f'Hi {s}, and {t}!'
+  if len(args) >1:       # Test case kho
+    name_list=args
+    s=', '.join(name_list[:-1])
+    t=name_list[-1]
+    return f'Hi {s}, and {t}!'
 
-print( hi('Mom', 'Dad') )
-print( hi('A', 'B', 'C') )
-print( hi('1', '22', '333', '4444') )
+  elif len(args) <=1:     # Test case de
+    name=args[0]
+    if name == '' or name == None:
+      return 'Hi!'
+    return f'Hi {name}!'
+
+# print( hi('Mom', 'Dad') )
+# print( hi('A', 'B', 'C') )
+# print( hi('1', '22', '333', '4444') )
+
+print(hi(''))
+# print(hi())
+print(hi(None))
