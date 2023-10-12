@@ -40,23 +40,27 @@ def hi_de(name=''):
 # print(hi_de())
 # print(hi_de(None))
 
-def hi(*args):
+def hi(*args, **kwargs):
   if len(args) >1:       # Test case kho
     name_list=args
     s=', '.join(name_list[:-1])
     t=name_list[-1]
     return f'Hi {s}, and {t}!'
 
-  elif len(args) <=1:     # Test case de
+  elif len(args) <=1 or len(kwargs) >0:     # Test case de
     name=args[0] if len(args) > 0 else None
+    if len(kwargs) >0:
+      name=kwargs['name']
     if name == '' or name == None:
       return 'Hi!'
     return f'Hi {name}!'
 
-print( hi('Mom', 'Dad') )
-print( hi('A', 'B', 'C') )
-print( hi('1', '22', '333', '4444') )
+# print( hi('Mom', 'Dad') )
+# print( hi('A', 'B', 'C') )
+# print( hi('1', '22', '333', '4444') )
 
-print(hi(''))
-print(hi())
-print(hi(None))
+# print(hi(''))
+# print(hi())
+# print(hi(None))
+# print(hi('Mom'))
+print(hi(name='Mom'))
