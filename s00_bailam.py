@@ -31,5 +31,5 @@ hi('1', '22', '333', '4444') | Hi 1, 22, 333 and 4444!
 
 #region bailam
 def hi(name):
-  return 'todo'
+  return f'Hi {name}!'
 #endregion bailam
