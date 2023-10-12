@@ -48,15 +48,15 @@ def hi(*args):
     return f'Hi {s}, and {t}!'
 
   elif len(args) <=1:     # Test case de
-    name=args[0]
+    name=args[0] if len(args) > 0 else None
     if name == '' or name == None:
       return 'Hi!'
     return f'Hi {name}!'
 
-# print( hi('Mom', 'Dad') )
-# print( hi('A', 'B', 'C') )
-# print( hi('1', '22', '333', '4444') )
+print( hi('Mom', 'Dad') )
+print( hi('A', 'B', 'C') )
+print( hi('1', '22', '333', '4444') )
 
 print(hi(''))
-# print(hi())
+print(hi())
 print(hi(None))
