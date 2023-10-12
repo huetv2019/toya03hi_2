@@ -41,8 +41,10 @@ def hi_de(name=''):
 # print(hi_de(None))
 
 def hi(*args):
-  s=', '.join(args)
-  return f'Hi {s}!'
+  name_list=args
+  s=', '.join(name_list[:-1])
+  t=name_list[-1]
+  return f'Hi {s}, and {t}!'
 
 print( hi('Mom', 'Dad') )
 print( hi('A', 'B', 'C') )
